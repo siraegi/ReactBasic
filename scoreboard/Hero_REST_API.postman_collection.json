@@ -1,0 +1,161 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Hero REST API",
+		"_postman_id": "4c297f93-6536-e291-2bc4-c4314fe49d19",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "/api/user/heroes - 히어로 목록 가져오기",
+			"request": {
+				"url": {
+					"raw": "http://ec2-15-164-134-124.ap-northeast-2.compute.amazonaws.com:8000/api/user/heroes?start_index=0&page_size=2",
+					"protocol": "http",
+					"host": [
+						"ec2-15-164-134-124",
+						"ap-northeast-2",
+						"compute",
+						"amazonaws",
+						"com"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"user",
+						"heroes"
+					],
+					"query": [
+						{
+							"key": "start_index",
+							"value": "0",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "page_size",
+							"value": "2",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "/api/user/hero/3  -  히어로 상세 보기",
+			"request": {
+				"url": "http://ec2-15-164-134-124.ap-northeast-2.compute.amazonaws.com:8000/api/user/hero/2",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "/api/admin/hero -  히어로 등록하기",
+			"request": {
+				"url": "http://ec2-15-164-134-124.ap-northeast-2.compute.amazonaws.com:8000/api/admin/hero",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"batman\",\n\t\"email\": \"batman@gmail.com\",\n\t\"sex\": \"male\",\n\t\"country\": \"American\",\n\t\"address\": \"LA\",\n\t\"powers\": [\n\t\t\"flying\", \"strength\"\n\t]\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "/api/admin/photo  -  이미지 등록하기",
+			"request": {
+				"url": "http://ec2-15-164-134-124.ap-northeast-2.compute.amazonaws.com:8000/api/admin/photo",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "photo",
+							"description": "",
+							"type": "file",
+							"src": "cat.jpg"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "/api/admin/hero -  히어로 수정하기",
+			"request": {
+				"url": "http://ec2-15-164-134-124.ap-northeast-2.compute.amazonaws.com:8000/api/admin/hero",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"id\": 2,\n\t\"name\": \"batman\",\n\t\"email\": \"batman@gmail.com\",\n\t\"sex\": \"male\",\n\t\"country\": \"American\",\n\t\"address\": \"LA\",\n\t\"powers\": [\n\t\t\"flying\", \"strength\"\n\t]\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "/api/admin/hero?id=3 -  히어로 삭제",
+			"request": {
+				"url": {
+					"raw": "http://ec2-15-164-134-124.ap-northeast-2.compute.amazonaws.com:8000/api/admin/hero?id=1",
+					"protocol": "http",
+					"host": [
+						"ec2-15-164-134-124",
+						"ap-northeast-2",
+						"compute",
+						"amazonaws",
+						"com"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"admin",
+						"hero"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
